@@ -7,7 +7,10 @@
 
 import Foundation
 
-struct CoreCompetency: Codable: Identifiable{
+struct CoreCompetency: Codable, Identifiable{
     let id: String
+    let title: String
+    let description: String
+    let group: String
     
 }
