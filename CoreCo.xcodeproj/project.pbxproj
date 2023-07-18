@@ -16,9 +16,8 @@
 		A6B163C22A66D36B00558272 /* CoreCoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B163C12A66D36B00558272 /* CoreCoTests.swift */; };
 		A6B163CC2A66D36B00558272 /* CoreCoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B163CB2A66D36B00558272 /* CoreCoUITests.swift */; };
 		A6B163CE2A66D36B00558272 /* CoreCoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B163CD2A66D36B00558272 /* CoreCoUITestsLaunchTests.swift */; };
-		A6B163DD2A66D5EE00558272 /* dealingWithBusiness.json in Resources */ = {isa = PBXBuildFile; fileRef = A6B163DA2A66D5ED00558272 /* dealingWithBusiness.json */; };
-		A6B163DE2A66D5EE00558272 /* dealingWithOthers.json in Resources */ = {isa = PBXBuildFile; fileRef = A6B163DB2A66D5EE00558272 /* dealingWithOthers.json */; };
-		A6B163DF2A66D5EE00558272 /* selfManagement.json in Resources */ = {isa = PBXBuildFile; fileRef = A6B163DC2A66D5EE00558272 /* selfManagement.json */; };
+		A6B163E22A66E8BD00558272 /* coreCompetencies.json in Resources */ = {isa = PBXBuildFile; fileRef = A6B163E12A66E8BD00558272 /* coreCompetencies.json */; };
+		A6B163E42A66E92800558272 /* CoreCompetency.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B163E32A66E92800558272 /* CoreCompetency.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,9 +50,8 @@
 		A6B163C72A66D36B00558272 /* CoreCoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreCoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6B163CB2A66D36B00558272 /* CoreCoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreCoUITests.swift; sourceTree = "<group>"; };
 		A6B163CD2A66D36B00558272 /* CoreCoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreCoUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		A6B163DA2A66D5ED00558272 /* dealingWithBusiness.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dealingWithBusiness.json; sourceTree = "<group>"; };
-		A6B163DB2A66D5EE00558272 /* dealingWithOthers.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = dealingWithOthers.json; sourceTree = "<group>"; };
-		A6B163DC2A66D5EE00558272 /* selfManagement.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = selfManagement.json; sourceTree = "<group>"; };
+		A6B163E12A66E8BD00558272 /* coreCompetencies.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = coreCompetencies.json; sourceTree = "<group>"; };
+		A6B163E32A66E92800558272 /* CoreCompetency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreCompetency.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +102,7 @@
 		A6B163AA2A66D36900558272 /* CoreCo */ = {
 			isa = PBXGroup;
 			children = (
+				A6B163E52A66E93300558272 /* Model */,
 				A6B163E02A66D60000558272 /* CompetencyData */,
 				A6B163AB2A66D36900558272 /* CoreCoApp.swift */,
 				A6B163AD2A66D36900558272 /* ContentView.swift */,
@@ -143,11 +142,17 @@
 		A6B163E02A66D60000558272 /* CompetencyData */ = {
 			isa = PBXGroup;
 			children = (
-				A6B163DA2A66D5ED00558272 /* dealingWithBusiness.json */,
-				A6B163DB2A66D5EE00558272 /* dealingWithOthers.json */,
-				A6B163DC2A66D5EE00558272 /* selfManagement.json */,
+				A6B163E12A66E8BD00558272 /* coreCompetencies.json */,
 			);
 			path = CompetencyData;
+			sourceTree = "<group>";
+		};
+		A6B163E52A66E93300558272 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A6B163E32A66E92800558272 /* CoreCompetency.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -254,11 +259,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A6B163DD2A66D5EE00558272 /* dealingWithBusiness.json in Resources */,
 				A6B163B32A66D36A00558272 /* Preview Assets.xcassets in Resources */,
+				A6B163E22A66E8BD00558272 /* coreCompetencies.json in Resources */,
 				A6B163B02A66D36A00558272 /* Assets.xcassets in Resources */,
-				A6B163DE2A66D5EE00558272 /* dealingWithOthers.json in Resources */,
-				A6B163DF2A66D5EE00558272 /* selfManagement.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +289,7 @@
 				A6B163B52A66D36A00558272 /* Persistence.swift in Sources */,
 				A6B163AE2A66D36900558272 /* ContentView.swift in Sources */,
 				A6B163B82A66D36A00558272 /* CoreCo.xcdatamodeld in Sources */,
+				A6B163E42A66E92800558272 /* CoreCompetency.swift in Sources */,
 				A6B163AC2A66D36900558272 /* CoreCoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
