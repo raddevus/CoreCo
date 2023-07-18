@@ -1,0 +1,53 @@
+[
+  {
+    "id": "sm-01",
+    "text": "Self confidence",
+    "description": "Faith in one’s own ideas and capability to be successful; willingness to take an independent position in the face of opposition.",
+    "examples": [
+      "Is confident of own ability to accomplish goals",
+      "Presents self crisply and impressively",
+      "Is willing to speak up to the right person or group at the right time, when he/she disagrees with a decision or strategy",
+      "Approaches challenging tasks with a “can-do” attitude"
+    ],
+    "group": "Self Management"
+  },
+  {
+    "id": "sm-02",
+    "text": "Stress management",
+    "description": "The ability to keep functioning effectively when under pressure and maintain self control in the face of hostility or provocation.",
+    "examples": [
+      "Remains calm under stress.",
+      "Can effectively handle several problems or tasks at once.",
+      "Controls his/her response when criticized, attacked or provoked.",
+      "Maintains a sense of humor under difficult circumstances.",
+      "Manages own behavior to prevent or reduce feelings of stress."
+    ],
+    "group": "Self Management"
+  },
+  {
+    "id": "sm-03",
+    "text": "Personal credibility",
+    "description": "Demonstrated concern that one be perceived as responsible, reliable, and trustworthy.",
+    "examples": [
+      "Does what he/she commits to doing.",
+      "Respects the confidentiality of information or concerns shared by others.",
+      "Is honest and forthright with people.",
+      "Carries his/her fair share of the workload.",
+      "Takes responsibility for own mistakes; does not blame others.",
+      "Conveys a command of the relevant facts and information."
+    ],
+    "group": "Self Management"
+  },
+  {
+    "id": "sm-04",
+    "text": "Flexibility",
+    "description": "Openness to different and new ways of doing things; willingness to modify one’s preferred way of doing things.",
+    "examples": [
+      "Is able to see the merits of perspectives other than his/her own.",
+      "Demonstrates openness to new organizational structures, procedures, and technology.",
+      "Switches to a different strategy when an initially selected one is unsuccessful.",
+      "Demonstrates willingness to modify a strongly held position in the face of contrary evidence."
+    ],
+    "group": "Self Management"
+  }
+]
