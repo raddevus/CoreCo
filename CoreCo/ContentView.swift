@@ -21,15 +21,15 @@ struct ContentView: View {
     @State private var selectedGroup: Group = Group.empty
     
     @Environment(\.managedObjectContext) private var viewContext
-
+    
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
-
+    
     var body: some View {
         Form {
-            List {
+            
                 Picker("Group (select to start)", selection: $selectedGroup) {
                     Text("")
                         .tag(Group.empty)
@@ -52,7 +52,7 @@ struct ContentView: View {
                     }
                     displayedCompetencies = getCompetenciesByGroup(group: groupName)
                 })
-            }
+            
             List {
                 ForEach(displayedCompetencies) { item in
                     NavigationLink {
@@ -62,16 +62,6 @@ struct ContentView: View {
                     }
                 }
                 .onDelete(perform: deleteItems)
-            }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    EditButton()
-                }
-                ToolbarItem {
-                    Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
-                    }
-                }
             }
         }
     }
