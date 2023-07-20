@@ -18,6 +18,7 @@
 		A6B163CE2A66D36B00558272 /* CoreCoUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B163CD2A66D36B00558272 /* CoreCoUITestsLaunchTests.swift */; };
 		A6B163E22A66E8BD00558272 /* coreCompetencies.json in Resources */ = {isa = PBXBuildFile; fileRef = A6B163E12A66E8BD00558272 /* coreCompetencies.json */; };
 		A6B163E42A66E92800558272 /* CoreCompetency.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B163E32A66E92800558272 /* CoreCompetency.swift */; };
+		A6B163E72A66EA7C00558272 /* Bundle-Decodable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6B163E62A66EA7C00558272 /* Bundle-Decodable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		A6B163CD2A66D36B00558272 /* CoreCoUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreCoUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		A6B163E12A66E8BD00558272 /* coreCompetencies.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = coreCompetencies.json; sourceTree = "<group>"; };
 		A6B163E32A66E92800558272 /* CoreCompetency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreCompetency.swift; sourceTree = "<group>"; };
+		A6B163E62A66EA7C00558272 /* Bundle-Decodable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle-Decodable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				A6B163B42A66D36A00558272 /* Persistence.swift */,
 				A6B163B62A66D36A00558272 /* CoreCo.xcdatamodeld */,
 				A6B163B12A66D36A00558272 /* Preview Content */,
+				A6B163E62A66EA7C00558272 /* Bundle-Decodable.swift */,
 			);
 			path = CoreCo;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				A6B163B82A66D36A00558272 /* CoreCo.xcdatamodeld in Sources */,
 				A6B163E42A66E92800558272 /* CoreCompetency.swift in Sources */,
 				A6B163AC2A66D36900558272 /* CoreCoApp.swift in Sources */,
+				A6B163E72A66EA7C00558272 /* Bundle-Decodable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

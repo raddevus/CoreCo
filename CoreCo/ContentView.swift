@@ -8,7 +8,18 @@
 import SwiftUI
 import CoreData
 
+enum Group: String, CaseIterable, Identifiable {
+    case empty, selfManagement, dealWithOthers, dealWithBusiness
+    var id: Self { self }
+}
+
 struct ContentView: View {
+    let coreCompetencies : [CoreCompetency] = Bundle.main.decode("coreCompetencies")
+    
+    @State private var displayedCompetencies = [CoreCompetency]()
+    
+    @State private var selectedGroup: Group = Group.empty
+    
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
@@ -17,13 +28,37 @@ struct ContentView: View {
     private var items: FetchedResults<Item>
 
     var body: some View {
-        NavigationView {
+        Form {
             List {
-                ForEach(items) { item in
+                Picker("Group (select to start)", selection: $selectedGroup) {
+                    Text("")
+                        .tag(Group.empty)
+                    Text("Self Management").tag(Group.selfManagement)
+                    Text("Dealing With Others").tag(Group.dealWithOthers)
+                    Text("Dealing With Business").tag(Group.dealWithBusiness)
+                }
+                .onChange(of: selectedGroup, perform: { newValue in
+                    print("PICKER CHANGED \(selectedGroup)")
+                    var groupName = ""
+                    switch (selectedGroup){
+                    case .empty:
+                        groupName = ""
+                    case .selfManagement:
+                        groupName = "Self Management"
+                    case .dealWithOthers:
+                        groupName = "Dealing With People"
+                    case .dealWithBusiness:
+                        groupName = "Dealing With Business"
+                    }
+                    displayedCompetencies = getCompetenciesByGroup(group: groupName)
+                })
+            }
+            List {
+                ForEach(displayedCompetencies) { item in
                     NavigationLink {
-                        Text("Item at \(item.timestamp!, formatter: itemFormatter)")
+                        Text("Item at \(item.title) ")
                     } label: {
-                        Text(item.timestamp!, formatter: itemFormatter)
+                        Text(item.title)
                     }
                 }
                 .onDelete(perform: deleteItems)
@@ -38,7 +73,6 @@ struct ContentView: View {
                     }
                 }
             }
-            Text("Select an item")
         }
     }
 
@@ -72,6 +106,17 @@ struct ContentView: View {
             }
         }
     }
+    
+    private func getCompetenciesByGroup(group: String) -> ([CoreCompetency]){
+        var allMatching = [CoreCompetency]()
+        _ = coreCompetencies.map({
+            if $0.group == group {
+                allMatching.append($0)
+            }
+        })
+        return allMatching
+    }
+    
 }
 
 private let itemFormatter: DateFormatter = {
