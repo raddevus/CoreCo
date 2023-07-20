@@ -28,10 +28,9 @@ struct ContentView: View {
     private var items: FetchedResults<Item>
     
     var body: some View {
-        Form {
-            
-                Picker("Group (select to start)", selection: $selectedGroup) {
-                    Text("")
+        VStack{
+            Picker("Group (select to start)", selection: $selectedGroup) {
+                    Text("(Select A Group To Begin)")
                         .tag(Group.empty)
                     Text("Self Management").tag(Group.selfManagement)
                     Text("Dealing With Others").tag(Group.dealWithOthers)
@@ -53,16 +52,21 @@ struct ContentView: View {
                     displayedCompetencies = getCompetenciesByGroup(group: groupName)
                 })
             
-            List {
-                ForEach(displayedCompetencies) { item in
-                    NavigationLink {
-                        Text("Item at \(item.title) ")
-                    } label: {
-                        Text(item.title)
+            NavigationView {
+                List {
+                    ForEach(displayedCompetencies) { item in
+                        NavigationLink {
+                            Text("Item at \(item.title) ")
+                        } label: {
+                            Text(item.title)
+                        }
                     }
+                    .onDelete(perform: deleteItems)
                 }
-                .onDelete(perform: deleteItems)
+            
             }
+            
+            
         }
     }
 
