@@ -56,7 +56,8 @@ struct ContentView: View {
                 List {
                     ForEach(displayedCompetencies) { item in
                         NavigationLink {
-                            Text("Item at \(item.title) ")
+                            CompetencyDetailView(competency: item)
+                            //Text("Item at \(item.title) ")
                         } label: {
                             Text(item.title)
                         }
