@@ -104,10 +104,10 @@
 		A6B163AA2A66D36900558272 /* CoreCo */ = {
 			isa = PBXGroup;
 			children = (
+				A6D573B82A6ADABE00DD8F9A /* View */,
 				A6B163E52A66E93300558272 /* Model */,
 				A6B163E02A66D60000558272 /* CompetencyData */,
 				A6B163AB2A66D36900558272 /* CoreCoApp.swift */,
-				A6B163AD2A66D36900558272 /* ContentView.swift */,
 				A6B163AF2A66D36A00558272 /* Assets.xcassets */,
 				A6B163B42A66D36A00558272 /* Persistence.swift */,
 				A6B163B62A66D36A00558272 /* CoreCo.xcdatamodeld */,
@@ -156,6 +156,14 @@
 				A6B163E32A66E92800558272 /* CoreCompetency.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		A6D573B82A6ADABE00DD8F9A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A6B163AD2A66D36900558272 /* ContentView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
