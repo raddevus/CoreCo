@@ -11,22 +11,29 @@ struct CompetencyDetailView: View {
     let coreCompetency: CoreCompetency
     
     var body: some View {
-        ScrollView{
-            VStack(){
-                Text(coreCompetency.title)
-                    .font(.title)
-                    .padding()
-                Text(coreCompetency.description)
-                    .font(.title2)
-                    .foregroundColor(.blue)
-                    .padding()
-                    .border(.black)
-                    .padding(EdgeInsets.init(top: CGFloat(0), leading: CGFloat(3), bottom: CGFloat(5), trailing: CGFloat(3)))
-                ForEach (coreCompetency.examples, id:\.self){ item in
-                    ExamplesToggleView(example: item)
-                    
+        NavigationView{
+            ScrollView{
+                VStack(){
+                    Text(coreCompetency.title)
+                        .font(.title)
+                        .padding()
+                    Text(coreCompetency.description)
+                        .font(.title2)
+                        .foregroundColor(.blue)
+                        .padding()
+                        .border(.black)
+                        .padding(EdgeInsets.init(top: CGFloat(0), leading: CGFloat(3), bottom: CGFloat(5), trailing: CGFloat(3)))
+                    ForEach (coreCompetency.examples, id:\.self){ item in
+                        ExamplesToggleView(example: item)
+                        
+                    }
+                    Spacer()
                 }
-                Spacer()
+            }
+        }
+        .toolbar{
+            Button("Add Journal Entry"){
+                
             }
         }
     }
