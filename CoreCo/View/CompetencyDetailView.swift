@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CompetencyDetailView: View {
     let coreCompetency: CoreCompetency
+    @State private var isSelected : Bool = false
     
     var body: some View {
         NavigationView{
@@ -24,8 +25,8 @@ struct CompetencyDetailView: View {
                         .border(.black)
                         .padding(EdgeInsets.init(top: CGFloat(0), leading: CGFloat(3), bottom: CGFloat(5), trailing: CGFloat(3)))
                     ForEach (coreCompetency.examples, id:\.self){ item in
-                        ExamplesToggleView(example: item)
-                        
+                        var exampleToggle = ExampleToggle()
+                        ExamplesToggleView(example: item, exampleToggle: exampleToggle)
                     }
                     Spacer()
                 }
@@ -44,16 +45,25 @@ struct CompetencyDetailView: View {
     
 }
 
+class ExampleToggle : Identifiable, ObservableObject{
+    let id = UUID()
+    @Published var isToggled: Bool = false
+}
+
 struct ExamplesToggleView: View {
     
     var example: String
-    @State private var exampleToggle = false
+    @ObservedObject var exampleToggle: ExampleToggle
     
     var body: some View {
         VStack(spacing: 0) {
-            Toggle(example, isOn: $exampleToggle)
+            Toggle(example, isOn: $exampleToggle.isToggled)
+                .onChange(of: exampleToggle.isToggled, perform: {isSelected in
+                    print("what up? : \(example) \(isSelected)")
+                })
         }
         .padding(.horizontal)
+        
         
     }
 }
