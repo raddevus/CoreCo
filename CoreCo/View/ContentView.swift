@@ -28,8 +28,9 @@ struct ContentView: View {
     private var items: FetchedResults<Item>
     
     var body: some View {
-        VStack{
-            Picker("Group (select to start)", selection: $selectedGroup) {
+        TabView{
+            VStack{
+                Picker("Group (select to start)", selection: $selectedGroup) {
                     Text("(Select A Group To Begin)")
                         .tag(Group.empty)
                     Text("Self Management").tag(Group.selfManagement)
@@ -51,23 +52,46 @@ struct ContentView: View {
                     }
                     displayedCompetencies = getCompetenciesByGroup(group: groupName)
                 })
-            
-            NavigationView {
-                List {
-                    ForEach(displayedCompetencies) { item in
-                        NavigationLink {
-                            CompetencyDetailView(competency: item)
-                            //Text("Item at \(item.title) ")
-                        } label: {
-                            Text(item.title)
-                        }
-                    }
-                    .onDelete(perform: deleteItems)
+                
+                
+                if displayedCompetencies.count < 1{
+                    Text("This app is based upon the fantastic document:")
+                        .padding()
+                        .font(.title)
+                    Text("31 Core Competencies")
+                        .padding()
+                        .font(.title)
+                    Text("Written by Edward J. Cripe (2002)")
+                    Link("Read the original document online",
+                          destination: URL(string: "https://www.workforce.com/news/31-core-competencies-explained")!)
+                    .padding()
+                    
                 }
-            
+                NavigationView {
+                    List {
+                        ForEach(displayedCompetencies) { item in
+                            NavigationLink {
+                                CompetencyDetailView(competency: item)
+                                //Text("Item at \(item.title) ")
+                            } label: {
+                                Text(item.title)
+                            }
+                        }
+                        .onDelete(perform: deleteItems)
+                    }
+                    
+                }
+                
             }
-            
-            
+            .tabItem{
+                Label("Main", systemImage: "circle.square")
+            }
+            VStack{
+               Text("test")
+            }
+            .tabItem{
+                Label("Journal", systemImage: "note.text")
+            }
         }
     }
 
