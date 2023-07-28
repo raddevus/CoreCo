@@ -25,7 +25,7 @@ struct CompetencyDetailView: View {
                         .border(.black)
                         .padding(EdgeInsets.init(top: CGFloat(0), leading: CGFloat(3), bottom: CGFloat(5), trailing: CGFloat(3)))
                     ForEach (coreCompetency.examples, id:\.self){ item in
-                        var exampleToggle = ExampleToggle()
+                        let exampleToggle = ExampleToggle()
                         ExamplesToggleView(example: item, exampleToggle: exampleToggle)
                     }
                     Spacer()
