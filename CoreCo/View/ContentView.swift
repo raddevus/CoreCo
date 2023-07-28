@@ -87,7 +87,7 @@ struct ContentView: View {
                 Label("Main", systemImage: "circle.square")
             }
             VStack{
-               Text("test")
+               JournalEntryView()
             }
             .tabItem{
                 Label("Journal", systemImage: "note.text")
